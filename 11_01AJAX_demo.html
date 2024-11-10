@@ -11,6 +11,7 @@
   <h3>AJAX/XHR 網路連線實作</h3>
   <!-- 點擊按鈕呼叫getData -->
   <button onclick="getData();">取得資料</button>
+  <div id="result"></div>
   <script>
     //測試網址 https://cwpeng.github.io/live-records-samples/data/products.json
     function getData() {
@@ -22,7 +23,19 @@
         //連線後提供的回應物件
         // console.log(response);
       }).then(function (data) {
-        console.log(data);
+        //改用迴圈將每筆資料逐一抓取
+        let result = document.querySelector("#result")
+
+        for (let i = 0; i < data.length; i++) {
+          //用product存放抓出來的資料
+          let product = data[i];
+          // console.log(product);
+          // //只印出name
+          // console.log(product.name);
+          //innerHTML讓抓取資料呈現在畫面上
+          result.innerHTML += "<div>" + product.name + "," + product.price + "," + product.description + "</div>";
+        }
+
       })
     }
   </script>
