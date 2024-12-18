@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11_02_TryCatch_實作練習</title>
+</head>
+
+<body>
+  <script>
+    //進行錯誤偵測
+    function getMonthName(mo) {
+      mo = mo - 1; // 針對陣列索引調整月份的數字 (1=Jan, 12=Dec)
+
+      //建立陣列擺放月份
+      var month = new Array(
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      );
+      //如果輸入的數字不是空值，就回傳內容
+      if (month[mo] != null) {
+        return month[mo];
+      } else {
+        throw "InvalidMonthNo";
+      }
+    }
+
+    try {
+      // 需要測試的語句
+      monthName = getMonthName(1); // 正確執行
+      console.log(monthName);
+      monthName = getMonthName(31); // 可拋出例外的函數
+    } catch (e) {
+      monthName = "unknown";
+      console.log(e); // 把例外物件傳給錯誤處理器
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12_01_DOM</title>
+</head>
+
+<body>
+  <script>
+    //印出window物件
+    console.log(window);
+    //取得視窗寬高
+    console.log(window.innerWidth, window.innerHeight);
+    //screen:顯示器螢幕的寬高
+    console.log(window.screen.width, window.screen.height);
+    //取得目前網址內容
+    console.log(window.location.href);
+    //更改網址列內容(跳轉網頁)
+    // window.location.href = "https://www.google.com.tw/"
+
+    //document物件
+    console.log(window.document);
+    //詳細印出document內容
+    console.dir(window.document);
+    //取得網頁標題
+    console.log(document.title);
+    //替換網頁標題
+    document.title = "網頁視窗"
+
+  </script>
+</body>
+
+</html>
